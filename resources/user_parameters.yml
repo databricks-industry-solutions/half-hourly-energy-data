@@ -1,0 +1,11 @@
+variables:
+  user_config:
+    description: 'User environment parameter settings'
+    type: complex
+    default: 
+      target_catalog: ''
+      clone_raw_data: ''
+      overwrite_data: ''
+      secret_scope: ''
+      secret_key: ''
+      target_schema: ''

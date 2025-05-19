@@ -1,0 +1,12 @@
+geopandas==1.0.1
+mapclassify==2.8.1
+folium==0.19.5
+rasterio==1.4.3
+cdsapi==0.7.5
+eccodes==2.40.1
+pandas<2
+xarray==2024.3.0
+cfgrib==0.9.15.0
+dask==2025.3.0
+beautifulsoup4==4.13.3
+holidays==0.70

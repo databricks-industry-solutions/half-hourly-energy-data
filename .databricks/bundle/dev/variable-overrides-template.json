@@ -1,0 +1,10 @@
+{
+  "user_config": {
+    "target_catalog" : "",
+    "clone_raw_data" : "",
+    "overwrite_data" : "",
+    "secret_scope" : "",
+    "secret_key" : "",
+    "target_schema" : ""
+  }
+}

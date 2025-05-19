@@ -1,0 +1,79 @@
+resources:
+  jobs:
+    energy_solution_accelerator:
+      name: energy_solution_accelerator
+      tasks:
+        - task_key: 00_project_setup
+          notebook_task:
+            notebook_path: "../src/00_project_setup.ipynb"
+            base_parameters: ${var.user_config}
+            source: WORKSPACE
+        - task_key: 01_ingest_meter_data
+          depends_on:
+            - task_key: 00_project_setup
+          notebook_task:
+            notebook_path: "../src/01a_ingest_meter_data.ipynb"
+            source: WORKSPACE
+        - task_key: 01_ingest_weather_forecast
+          depends_on:
+            - task_key: 00_project_setup
+          notebook_task:
+            notebook_path: "../src/01c_ingest_forecast_weather_data.ipynb"
+            source: WORKSPACE
+          job_cluster_key: 01_ingest_weather_historicals_cluster
+        - task_key: 01_ingest_weather_historicals
+          depends_on:
+            - task_key: 00_project_setup
+          notebook_task:
+            notebook_path: "../src/01b_ingest_historic_weather_data.ipynb"
+            source: WORKSPACE
+          job_cluster_key: 01_ingest_weather_historicals_cluster
+        - task_key: 02_data_preparation
+          depends_on:
+            - task_key: 01_ingest_weather_historicals
+            - task_key: 01_ingest_meter_data
+          notebook_task:
+            notebook_path: "../src/02_data_prep_for_feature_engineering.ipynb"
+            source: WORKSPACE
+        - task_key: 03_feature_engineering
+          depends_on:
+            - task_key: 02_data_preparation
+          notebook_task:
+            notebook_path: "../src/03_feature_engineering.ipynb"
+            source: WORKSPACE
+        - task_key: 04_dbsql_ai_forecast
+          depends_on:
+            - task_key: 03_feature_engineering
+          notebook_task:
+            notebook_path: "../src/04c_ai_forecasting_uk_energy.ipynb"
+            source: WORKSPACE
+        - task_key: 04_prophet_forecast_scaled
+          depends_on:
+            - task_key: 03_feature_engineering
+          notebook_task:
+            notebook_path: "../src/04b_forecast_with_prophet_and_exogenous_inputs_scaled.ipynb"
+            source: WORKSPACE
+        - task_key: 04_prophet_forecast_unscaled
+          depends_on:
+            - task_key: 03_feature_engineering
+          notebook_task:
+            notebook_path: "../src/04a_forecast_with_prophet_and_exogenous_inputs_unscaled.ipynb"
+            source: WORKSPACE
+        - task_key: 05_evaluation
+          depends_on:
+            - task_key: 04_dbsql_ai_forecast
+            - task_key: 04_prophet_forecast_scaled
+            - task_key: 04_prophet_forecast_unscaled
+          notebook_task:
+            notebook_path: "../src/05_forecast_evaluation.ipynb"
+            source: WORKSPACE
+
+      job_clusters:
+        - job_cluster_key: 01_ingest_weather_historicals_cluster
+          new_cluster: ${var.my_cluster}
+      tags:
+        job_type: solution accelerator
+      queue:
+        enabled: true
+
+
