@@ -79,6 +79,35 @@ Please note the code in this project is provided for your exploration only, and 
 
 Any issues discovered through the use of this project should be filed as GitHub Issues on the Repo. They will be reviewed as time permits, but there are no formal SLAs for support.
 
+## Libraries and data attribution
+
+| Library | Description | License | Source |
+|---|---|---|---|
+| geopandas | An open-source project to make working with geospatial data in Python easier. | BSD-3-Clause | [PyPI](https://pypi.org/project/geopandas/) |
+| mapclassify | Classification Schemes for Choroplete Maps, part of PySAL. | BSD-3-Clause | [PyPI](https://pypi.org/project/mapclassify/) |
+| folium | Makes beautiful maps with Leaflet.js & Python. | MIT License | [PyPI](https://pypi.org/project/folium/) |
+| rasterio | Reads and writes geospatial raster data for use with NumPy and SciPy. | BSD-3-Clause | [PyPI](https://pypi.org/project/rasterio/) |
+| cdsapi | A Python-based library for programmatic access to the Climate Data Store (CDS) API. | Apache 2.0 | [PyPI](https://pypi.org/project/cdsapi/) |
+| eccodes | ECMWF encoding/decoding software for GRIB and BUFR messages. | Apache 2.0 | [PyPI](https://pypi.org/project/eccodes/) |
+| pandas | A software library for data manipulation and analysis, offering data structures and operations for numerical tables and time series. | BSD-3-Clause | [PyPI](https://pypi.org/project/pandas/) |
+| xarray | N-D labeled arrays and datasets in Python, introducing dimensions, coordinates, and attributes. | Apache 2.0 | [PyPI](https://pypi.org/project/xarray/) |
+| cfgrib | A Python interface to the ecCodes library for decoding and encoding GRIB files. | Apache 2.0 | [PyPI](https://pypi.org/project/cfgrib/) |
+| dask | Parallel PyData with Task Scheduling for scalable analytics. | BSD-3-Clause | [PyPI](https://pypi.org/project/dask/) |
+| beautifulsoup4 | A Python library for pulling data out of HTML and XML files. | MIT License | [PyPI](https://pypi.org/project/beautifulsoup4/) |
+| holidays | A fast, efficient Python library for generating country- and subdivision- (e.g. state or province) specific sets of government-designated holidays on the fly. | MIT/ISC License | [PyPI](https://pypi.org/project/holidays/) |
+
+**Data used includes:**
+
+Weave smart meter data aggregated to LV feeder level. Publically available from [Weave](https://weave.energy/smart-meter-data)
+  - Contains Ordnance Survey data © Crown copyright and database right 2024
+  - Contains Royal Mail data © Royal Mail copyright and database right 2024
+  - Supported by NGED Open Data
+  - Supported by Northern Powergrid Open Data
+
+Climate data from the European Centre for [Medium-Range Weather Forecasts (ECMWF)](https://www.ecmwf.int/) through their [Climate Data Store (CDS)](https://cds.climate.copernicus.eu/) service.
+ECMWF Open Data is © 2025 European Centre for Medium-Range Weather Forecasts (ECMWF).
+This data is published under a Creative Commons Attribution 4.0 International (CC BY 4.0). https://creativecommons.org/licenses/by/4.0/
+
 ## License
 
 &copy; 2025 Databricks, Inc. All rights reserved. The source in this notebook is provided subject to the Databricks License [https://databricks.com/db-license-source].  All included or referenced third party libraries are subject to the licenses set forth below.
