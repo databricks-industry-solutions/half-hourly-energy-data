@@ -98,11 +98,13 @@ Any issues discovered through the use of this project should be filed as GitHub 
 
 **Data used includes:**
 
-Weave smart meter data aggregated to LV feeder level. Publically available from [Weave](https://weave.energy/smart-meter-data)
+Weave smart meter data aggregated to LV feeder level. Publically available from [Weave](https://weave.energy/smart-meter-data):
   - Contains Ordnance Survey data © Crown copyright and database right 2024
   - Contains Royal Mail data © Royal Mail copyright and database right 2024
-  - Supported by NGED Open Data
-  - Supported by Northern Powergrid Open Data
+  - Office for National Statistics data licensed under the [Open Government Licence v.3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
+  - SSEN Distribution and UK Power Networks data licensed under the [Creative Commons Attribution License v.4.0](https://creativecommons.org/licenses/by/4.0/)
+  - National Grid Electricity Distribution data licensed under the [NGED Shared Data License](https://www.nationalgrid.co.uk/open-data-licence)
+  - Northern Powergrid data licensed under the [Northern Powergrid Open Data License](https://northernpowergrid.opendatasoft.com/p/opendatalicence/)
 
 Climate data from the European Centre for [Medium-Range Weather Forecasts (ECMWF)](https://www.ecmwf.int/) through their [Climate Data Store (CDS)](https://cds.climate.copernicus.eu/) service.
 ECMWF Open Data is © 2025 European Centre for Medium-Range Weather Forecasts (ECMWF).
